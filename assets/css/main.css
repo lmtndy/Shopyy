@@ -98,7 +98,6 @@
 
 .navbar-item_user {
     display: flex;
-    justify-items: center;
     cursor: pointer;
     position: relative;
 }
@@ -720,6 +719,7 @@
     padding: 0 18px;
     cursor: pointer;
     display: inline-block;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .header__cart-icon {
@@ -1016,8 +1016,66 @@
     color: var(--primary-color);
 }
 
-/* Home sort & filter */
+/* Mobile category */
+.mobile-category {
+    display: none;
+}
 
+.mobile-category__list {
+    display: flex;
+    list-style: none;
+    max-width: 100%;
+    overflow-x: auto;
+    margin: 8px 0;
+}
+
+.mobile-category__list::-webkit-scrollbar {
+    display: none;
+}
+
+.mobile-category__item {
+    flex-shrink: 0;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.mobile-category__item:last-child {
+    margin-right: 0;
+}
+
+.mobile-category__item:nth-of-type(3n + 1) .mobile-category__link {
+    background-color: #87AFD8;
+}
+
+.mobile-category__item:nth-of-type(3n + 2) .mobile-category__link {
+    background-color: #76C9BD;
+}
+
+.mobile-category__item:nth-of-type(3n + 3) .mobile-category__link {
+    background-color: #88CF81;
+}
+
+.mobile-category__link {
+    --line-height: 2rem;
+    text-decoration: none;
+    color: var(--white-color);
+    font-size: 1.4rem;
+    width: 110px;
+    line-height: var(--line-height);
+    height: calc(var(--line-height) * 2);
+    border-radius: 4px;
+    font-weight: 300;
+    display: block;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    padding: 0 4px;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+/* Home sort & filter */
 .home-filter {
     display: flex;
     align-items: center;
@@ -1279,7 +1337,7 @@
 
 /* footer */
 .footer {
-    padding-top: 36px;
+    padding-top: 20px;
     border-top: 4px solid var(--primary-color);
 }
 
@@ -1287,11 +1345,12 @@
     font-size: 1.4rem;
     text-transform: uppercase;
     color: var(--text-color);
+    padding-top: 24px;
 }
 
 .footer-list {
     list-style: none;
-    padding-top: 20px;
+    padding-top: 16px;
 }
 
 .footer-item__link {
